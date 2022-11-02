@@ -27,7 +27,7 @@ class MyHomePage extends StatelessWidget {
         itemCount: 100,
         itemBuilder: (context, index) {
           return Dismissible(
-            crossAxisEndOffset: 0.0,
+            // crossAxisEndOffset: 0.0,
             key: Key(index.toString()),
             child: ListTile(
               leading: CircleAvatar(),
@@ -36,7 +36,7 @@ class MyHomePage extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
               subtitle: Text(faker.lorem.sentence()),
-              trailing: TextButton(onPressed: () {}, child: Text('Klik')),
+              trailing: Icon(Icons.delete),
             ),
           );
         },
