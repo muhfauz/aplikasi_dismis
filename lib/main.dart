@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   Faker faker = Faker();
+  int angka = 1 + Random().nextInt(100);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +33,12 @@ class MyHomePage extends StatelessWidget {
             // crossAxisEndOffset: 0.0,
             key: Key(index.toString()),
             child: ListTile(
-              leading: CircleAvatar(),
+              leading: CircleAvatar(
+                // radius: 90,
+                backgroundImage:
+                    NetworkImage('https://picsum.photos/id/${index}/200/300'),
+                backgroundColor: Colors.transparent,
+              ),
               title: Text(
                 faker.internet.userName(),
                 style: TextStyle(fontSize: 20),
