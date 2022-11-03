@@ -38,6 +38,30 @@ class MyHomePage extends StatelessWidget {
                 print("START TO END");
               }
             },
+            confirmDismiss: (direction) {
+              return showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      icon: Icon(Icons.delete),
+                      content: Text('Benar Akan dihapus ?'),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              print('Yes');
+                              Navigator.of(context).pop(true);
+                            },
+                            child: Text('Yes')),
+                        TextButton(
+                            onPressed: () {
+                              print('No');
+                              Navigator.of(context).pop(false);
+                            },
+                            child: Text('No')),
+                      ],
+                    );
+                  });
+            },
             background: Container(
                 color: Colors.redAccent, child: Icon(Icons.delete_forever)),
             // direction: DismissDirection.endToStart,
